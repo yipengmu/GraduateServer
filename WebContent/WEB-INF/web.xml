@@ -22,7 +22,45 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-<!-- <servlet ></servlet> -->
+<!-- servlet -->
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.laomu.graduate.servlet.login.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SigninServlet</servlet-name>
+    <servlet-class>com.laomu.graduate.servlet.login.SigninServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SigninServlet</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProvinceServlet</servlet-name>
+    <servlet-class>com.laomu.graduate.servlet.province.ProvinceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProvinceServlet</servlet-name>
+    <url-pattern>/province</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SchoolServlet</servlet-name>
+    <servlet-class>com.laomu.graduate.servlet.shcool.SchoolServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SchoolServlet</servlet-name>
+    <url-pattern>/school</url-pattern>
+  </servlet-mapping>
+
+<!-- servlet end -->
+
 	<mime-mapping>
 		<extension>css</extension>
 		<mime-type>text/css</mime-type>
