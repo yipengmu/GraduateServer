@@ -46,18 +46,19 @@ public class LoginServlet extends BaseHttpServlet {
 		user.upassword = CommonUtil.getStringParam(request, "upassword");
 		
 		UserMapper userMapper = MybatisManeger.getSessionFactory().openSession().getMapper(UserMapper.class);
-		List<UserBean> userBeanList = userMapper.findUserById(user.uid);
 		
-		
-		if (userBeanList != null && userBeanList.size()>0) {
-			response.getWriter().print("{\"results\":\"success\"}");
-			LogUtil.warn("login servlet success");
-			System.out.println(userBeanList.get(0).toString());
-		} else {
-			response.getWriter().print("{\"results\":\"failed\"}");
-			LogUtil.warn("login servlet failed");
-			System.out.println(userBeanList.toString());
-			
+		if(userMapper != null){
+			List<UserBean> userBeanList = userMapper.findUserById(user.uid);
+			if (userBeanList != null && userBeanList.size()>0) {
+				response.getWriter().print("{\"results\":\"success\"}");
+				LogUtil.warn("login servlet success");
+				System.out.println(userBeanList.get(0).toString());
+			} else {
+				response.getWriter().print("{\"results\":\"failed\"}");
+				LogUtil.warn("login servlet failed");
+				System.out.println(userBeanList.toString());
+				
+			}
 		}
 	}
 
