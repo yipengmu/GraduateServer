@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 import com.laomu.graduate.servlet.bean.UserBean;
 import com.laomu.graduate.utils.CommonUtil;
 import com.mysql.jdbc.log.Log4JLogger;
-import com.sina.sae.util.SaeUserInfo;
 
 public class DBManeger {
 
