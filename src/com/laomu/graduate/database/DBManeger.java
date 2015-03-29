@@ -6,8 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 import com.laomu.graduate.servlet.bean.UserBean;
 import com.laomu.graduate.utils.CommonUtil;
+import com.mysql.jdbc.log.Log4JLogger;
+import com.sina.sae.util.SaeUserInfo;
 
 public class DBManeger {
 
@@ -45,6 +49,8 @@ public class DBManeger {
 				user = "l04myxz5wj";
 				password = "j4kz10w4i0ji003hil100yi22mw0zmlx3jlljmhh";
 			}
+			Logger logger  =  Logger.getLogger("graduate");
+			logger.getRootLogger().debug(new String ("user= "+user + " ,password= " + password ));
 			Class.forName(driverClass);
 			conn = DriverManager.getConnection(url, user, password);
 			conn.createStatement().executeUpdate("use graduatedb");

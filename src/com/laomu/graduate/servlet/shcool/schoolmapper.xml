@@ -6,10 +6,10 @@
 	<mapper namespace="com.laomu.graduate.servlet.bean.UserMapper">
 	<!-- findById必须和接口中的方法名一样  返回一个User  就是刚才的别名  如果不弄别名要连类路径一起写 麻烦-->
 	<select id="findUserById" parameterType="HashMap" resultType="User">
-		select * from graduatedb.userinfo where uid=#{uid}
+		select * from userinfo where uid=#{uid}
     </select>
     <select id="findUserByIdAndPassword" parameterType="map" resultType="User">
-		select * from graduatedb.userinfo where uid=#{uid} and upassword=#{upassword}
+		select * from userinfo where uid=#{uid} and upassword=#{upassword}
     </select>
     <insert id="insertUser" parameterType="User" flushCache="true">
    		INSERT INTO user (id,username,password) VALUES (#{id},#{username},#{password})

@@ -5,23 +5,33 @@
 <configuration>
 	<typeAliases>
 		<!--给实体类起一个别名 user -->
-		<typeAlias type="com.laomu.graduate.servlet.bean.UserBean" alias="User" />
-		<typeAlias type="com.laomu.graduate.servlet.province.ProvinceBean" alias="ProvinceBean" />
+		<typeAlias type="com.laomu.graduate.servlet.bean.UserBean"
+			alias="User" />
+		<typeAlias type="com.laomu.graduate.servlet.province.ProvinceBean"
+			alias="ProvinceBean" />
 	</typeAliases>
-	<!--数据源配置  这块用 mysql数据库 -->
+	<!--数据源配置 这块用 mysql数据库 -->
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="jdbc" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3309/graduatedb?characterEncoding=UTF-8" />
-				<property name="username" value="root" />
-				<property name="password" value="" />
+
+				<!-- local -->
+				<!-- <property name="url" value="jdbc:mysql://localhost:3309/graduatedb?characterEncoding=UTF-8" 
+					/> <property name="username" value="root" /> <property name="password" value="" 
+					/> -->
+				<!-- sae server -->
+
+				<property name="url"
+					value="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_gangbiye?characterEncoding=UTF-8" />
+				<property name="username" value="l04myxz5wj" />
+				<property name="password" value="j4kz10w4i0ji003hil100yi22mw0zmlx3jlljmhh" />
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
-		<!--userMapper.xml装载进来  同等于把“dao”的实现装载进来 -->
+		<!--userMapper.xml装载进来 同等于把“dao”的实现装载进来 -->
 		<mapper resource="com/laomu/graduate/servlet/bean/userMapper.xml" />
 		<mapper resource="com/laomu/graduate/servlet/province/provincemapper.xml" />
 	</mappers>
