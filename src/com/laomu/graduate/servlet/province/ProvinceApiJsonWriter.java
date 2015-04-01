@@ -2,7 +2,7 @@ package com.laomu.graduate.servlet.province;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSONObject;
 import com.laomu.graduate.base.BaseApiJsonWriter;
 
 public class ProvinceApiJsonWriter extends BaseApiJsonWriter {
@@ -15,7 +15,7 @@ public class ProvinceApiJsonWriter extends BaseApiJsonWriter {
 
 	@Override
 	public String getOutputJsonData() {
-		return new Gson().toJson(mProvinceBean, ProvinceBean.class);
+		return new JSONObject().toJSONString(mProvinceBean).toString();
 	}
 
 }

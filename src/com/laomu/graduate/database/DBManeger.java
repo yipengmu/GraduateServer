@@ -25,8 +25,10 @@ public class DBManeger {
 	 */
 	private java.sql.PreparedStatement ps;
 
+	private final int ENV_LOCAL = 0;
+	private final int ENV_REMOTE = 1;
 	// 本地0，sae服务端1
-	private int env = 1;
+	private int env = ENV_REMOTE;
 
 	private static DBManeger ins;
 

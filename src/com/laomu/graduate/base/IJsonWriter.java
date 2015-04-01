@@ -1,7 +1,7 @@
 package com.laomu.graduate.base;
 
-import com.google.gson.JsonObject;
+import com.alibaba.fastjson.JSONObject;
 
 public interface IJsonWriter {
-	void outputJsonData(JsonObject obj);
+	void outputJsonData(JSONObject obj);
 }

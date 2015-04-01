@@ -21,8 +21,8 @@
 				<!-- <property name="url" value="jdbc:mysql://localhost:3309/graduatedb?characterEncoding=UTF-8" 
 					/> <property name="username" value="root" /> <property name="password" value="" 
 					/> -->
-				<!-- sae server -->
 
+				<!-- sae server -->
 				<property name="url"
 					value="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_gangbiye?characterEncoding=UTF-8" />
 				<property name="username" value="l04myxz5wj" />
