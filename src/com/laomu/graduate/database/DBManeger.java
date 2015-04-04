@@ -14,7 +14,7 @@ import com.mysql.jdbc.log.Log4JLogger;
 
 public class DBManeger {
 
-	private String url = "jdbc:mysql://localhost:3309/graduatedb";
+	private String url = "jdbc:mysql://localhost:3306/graduatedb";
 	private String user = "root";
 	private String password = "";
 	private String driverClass = "com.mysql.jdbc.Driver";
@@ -28,7 +28,7 @@ public class DBManeger {
 	private final int ENV_LOCAL = 0;
 	private final int ENV_REMOTE = 1;
 	// 本地0，sae服务端1
-	private int env = ENV_REMOTE;
+	private int env = ENV_LOCAL;
 
 	private static DBManeger ins;
 

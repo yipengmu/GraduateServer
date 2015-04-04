@@ -18,15 +18,14 @@
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 
 				<!-- local -->
-				<!-- <property name="url" value="jdbc:mysql://localhost:3309/graduatedb?characterEncoding=UTF-8" 
-					/> <property name="username" value="root" /> <property name="password" value="" 
-					/> -->
+				 <property name="url" value="jdbc:mysql://localhost:3306/graduatedb?characterEncoding=UTF-8" />
+				 <property name="username" value="root" /> <property name="password" value="" />
 
 				<!-- sae server -->
-				<property name="url"
+			<!-- 	<property name="url"
 					value="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_gangbiye?characterEncoding=UTF-8" />
 				<property name="username" value="l04myxz5wj" />
-				<property name="password" value="j4kz10w4i0ji003hil100yi22mw0zmlx3jlljmhh" />
+				<property name="password" value="j4kz10w4i0ji003hil100yi22mw0zmlx3jlljmhh" /> -->
 			</dataSource>
 		</environment>
 	</environments>
