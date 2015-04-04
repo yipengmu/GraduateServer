@@ -9,7 +9,7 @@ import com.laomu.graduate.bean.http.Ret;
 
 public class ResponseHelper {
 
-	public static String formatResponse(int retCode, String retMsg, HashMap<String, Object> data){
+	public static String formatResponse(int retCode, String retMsg,Object data){
 		if(retCode == 0){
 			//成功
 			JGResponse res = new JGResponse(new Ret(retCode, retMsg), data);
