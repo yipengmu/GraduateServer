@@ -99,6 +99,7 @@ public class DBManeger {
 			sta.setString(1, userInfo.uid);
 			sta.setString(2, userInfo.upassword);
 			sta.setString(3, userInfo.uname);
+			new Log4JLogger("http").logDebug("sql = " + sql);
 			sta.executeUpdate();
 			result = true;
 		} catch (SQLException e) {
@@ -113,6 +114,7 @@ public class DBManeger {
 		}
 		try {
 			String sql = "select * from userinfo where uid=" + userId;
+			new Log4JLogger("http").logDebug("sql = " + sql);
 			java.sql.PreparedStatement sta = conn.prepareStatement(sql);
 			ResultSet results = sta.executeQuery(sql);
 			if (results != null && results.getRow() > 0) {

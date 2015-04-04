@@ -12,6 +12,7 @@ import com.laomu.graduate.base.BaseHttpServlet;
 import com.laomu.graduate.database.DBManeger;
 import com.laomu.graduate.servlet.bean.UserBean;
 import com.laomu.graduate.utils.CommonUtil;
+import com.laomu.graduate.utils.http.ResponseHelper;
 
 /**
  * Servlet implementation class SigninServlet
@@ -19,16 +20,17 @@ import com.laomu.graduate.utils.CommonUtil;
 @WebServlet("/SigninServlet")
 public class SigninServlet extends BaseHttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SigninServlet() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SigninServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserBean user = new UserBean();
@@ -37,13 +39,16 @@ public class SigninServlet extends BaseHttpServlet {
 		user.upassword = CommonUtil.getStringParam(request, "upassword");
 
 		boolean bExist = DBManeger.getIns().selectUserByUserId(user.uid);
-		if(!bExist){
-			DBManeger.getIns().addUser(user);
-			response.getWriter().print("{\"results\":\"success\"}");
-		}else{
-			response.getWriter().print("{\"results\":\"failed\"}");
+		if (!bExist) {
+			boolean addResult = DBManeger.getIns().addUser(user);
+			if (addResult) {
+				response.getWriter().print(ResponseHelper.formatResponse(0, "注册成功", user));
+			} else {
+				response.getWriter().print(ResponseHelper.formatResponse(-1, "注册失败", null));
+			}
+		} else {
+			response.getWriter().print(ResponseHelper.formatResponse(-1, "该用户已存在，请更换账号", user));
 		}
 	}
-
 
 }

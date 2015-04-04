@@ -58,13 +58,10 @@ public class LoginServlet extends BaseHttpServlet {
 			List<UserBean> userBeanList = userMapper.findUserByIdAndPassword(param);
 			if (userBeanList != null && userBeanList.size()>0) {
 				response.getWriter().print(ResponseHelper.formatResponse(0, "登录成功",userBeanList.get(0)));
-				LogUtil.warn("login servlet success");
 				System.out.println(userBeanList.get(0).toString());
 			} else {
 				response.getWriter().print(ResponseHelper.formatResponse(-1, "用户不存在",null));
-				LogUtil.warn("login servlet failed");
 				System.out.println(userBeanList.toString());
-				
 			}
 		}
 		

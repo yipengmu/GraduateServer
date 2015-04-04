@@ -13,13 +13,12 @@ public class CommonUtil {
 
 	public static String getStringParam(HttpServletRequest request, String paraName) {
 		try {
-			return URLDecoder
-					.decode(new String(request.getParameter(paraName).getBytes("ISO8859-1"), "UTF-8"), "utf-8");
+			String paramString = new String(request.getParameter(paraName).getBytes("ISO8859-1"), "UTF-8");
+			return URLDecoder.decode(paramString, "utf-8");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return request.getParameter(paraName);
 		}
-
 	}
 
 	public static int getIntParam(HttpServletRequest request, String paraName) {
